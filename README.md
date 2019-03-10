@@ -1,5 +1,6 @@
 # maxboard
 Installation
+
 1. Intranet service
       - ./index.js  : connect firebase and create /board/<boardId>.html
       - ./server.js : local server ./board/<boardId>.html for Led maxtrix
@@ -8,12 +9,18 @@ Installation
       - ./linebot/index.js : webhook for line bot, put message to firebase realtime database
 
 
-Note:
-Firebase : doitung@xxx
+3. ESP32 CODE
+      #define MAX_DEVICES 16
+      #define CLK_PIN   14    
+      #define DATA_PIN  12    
+      #define CS_PIN    27  
+      resetIn = 2
 
-LineDev  : kongdej@xxxx
-
-Heroku   : maxboard.herokuapp.com: kogndejs@
-
-Localhost: ihear.xxx.xx.x..:9999  --> ./board/xxxx.html
+SERVERS
+ - Firebase : doitung@xxx / create realtime database
+ - LineDev  : kongdej@xxxx / create provider and bot
+ - Heroku   : kongdej@xxxx / create app (maxboard.herokuapp.com) then push ./linebot
+ - Localhost: 
+              - Firebase listen event (child_added, child_updated)
+              - webserver (ihear.xxx.xx.x..:9999/<boardId>.html
 
