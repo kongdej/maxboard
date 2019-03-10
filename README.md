@@ -10,6 +10,10 @@ Installation
 
 Note:
 Firebase : doitung@xxx
+
 LineDev  : kongdej@xxxx
+
 Heroku   : maxboard.herokuapp.com: kogndejs@
+
 Localhost: ihear.xxx.xx.x..:9999  --> ./board/xxxx.html
+
