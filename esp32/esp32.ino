@@ -7,7 +7,7 @@
 #include <WebServer.h>
 #include <time.h>
 
-String webhook = "http://192.168.1.134:9999/";  // local proxy server for linebot
+String webhook = "http://192.168.1.26:9999/";  // local proxy server for linebot
 //String webhook = "http://10.40.251.31:9999/"; // local proxy server for linebot
 const char *ssidap = "MAXBoard";                // SSID AP mode
 const char *passwordap = "";                    // no password
