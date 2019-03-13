@@ -7,7 +7,7 @@ const LINE_SECRET = "xxxxxxxxxxxxxxx"
 const LINE_ACCESS_TOKEN =  "xxxxxxxxxxxxxx"
 const DATABASEURL = "https://xxxxxxx.firebaseio.com"
 const serviceAccount = require("./serviceAccountKey.json");
-// --- //
+// --- -- //
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
