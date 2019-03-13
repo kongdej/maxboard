@@ -2,25 +2,30 @@ const express = require('express');
 const line = require('@line/bot-sdk');
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./serviceAccountKey.json");
+// -- Line BOT and Firebase configuration -- //
+const LINE_SECRET = "xxxxxxxxxxxxxxx"
+const LINE_ACCESS_TOKEN =  "xxxxxxxxxxxxxx"
+const DATABASEURL = "https://xxxxxxx.firebaseio.com"
+const serviceAccount = require("./serviceAccountKey.json");
+// --- //
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://maxboard-egat.firebaseio.com"
+  databaseURL: DATABASEURL
 });
 
 const ref = admin.app().database()
 const usersRef = ref.ref('/users')
 const boardRef = ref.ref('/board')
 
-const app = express();
-
 const config = {
-    channelAccessToken: "84ah/gtpG/bWLWtDU3COD+6YDnfEy7of4Zy/7QuFCrY/fNyEfYPprP4lsOMK0hXULqsXcqXztXcMDsfFEwrx5jX3KelVvz1iwFvj+CXzMtiGlVUmbYaP+PuAJyva2KpDdM9ZoNXgom7x0PyMB6p8YQdB04t89/1O/w1cDnyilFU=",
-    channelSecret: "c15c64dda7f40766228fc05fa2ca02b9"
+    channelAccessToken: LINE_ACCESS_TOKEN,
+    channelSecret: LINE_SECRET
 };
 
 const client = new line.Client(config);
+
+const app = express();
 
 app.post('/webhook', line.middleware(config), (req, res) => {
     Promise
@@ -79,7 +84,6 @@ function handleMessageEvent(event, text) {
 }
 
 app.set('port', (process.env.PORT || 80));
-
 app.listen(app.get('port'), function () {
     console.log('run at port', app.get('port'));
 });
