@@ -4,14 +4,11 @@ kongdejs@gmail.com
 
 User Manual
 
-1. LocalServer (Raspbery Pi)
-      : listen firebase-database modified, then create ./boards/<boardId>.html and write LINE message
-      : local web server http://<ip>:9999/<boardId>.html
+1. LocalServer (Raspbery Pi): Listen firebase-database, then create ./boards/<boardId>.html with LINE message and response requested from LEDMATRIX (http://<ip>:9999/<boardId>.html)
 
       - node index.js 
 
-2. LINEBOT (Heroku)
-      : webhook for line bot, put message to firebase-database
+2. LINEBOT (Heroku): LINEBOT Webhook, put message to firebase-database
       
       - create ./linebot/serviceAccountKey.json 
       - copy to ./linebot
