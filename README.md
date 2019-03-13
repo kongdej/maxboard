@@ -1,5 +1,5 @@
 # maxboard
-Installation
+Documentation
 
 1. Local Server
       - firebase.js  : connect firebase and create /board/<boardId>.html
