@@ -4,23 +4,21 @@ kongdejs@gmail.com
 
 User Manual
 
-1. LocalServer (Raspbery Pi): Listen firebase-database, then create ./boards/boardId.html with LINE message and response requested from LEDMATRIX (http://localhost:9999/boardId.html)
-
-      - node index.js 
-
-2. LINEBOT (Heroku): LINEBOT Webhook, put message to firebase-database
+1. LINEBOT (Heroku): LINEBOT Webhook, put message to firebase-database
       
       - create ./linebot/serviceAccountKey.json 
       - copy to ./linebot
       - deploy to heroku 
       - update webhook url 
 
+2. LocalServer: Listen firebase-database, then create ./boards/boardId.html with LINE message and response requested from LEDMATRIX (http://localhost:9999/boardId.html)
+
+      - node index.js 
+      
 3. ESP32 CODE
-      #define MAX_DEVICES 16
-      #define CLK_PIN   14    
-      #define DATA_PIN  12    
-      #define CS_PIN    27  
-      resetIn = 2
+
+      - modify localhost url
+
 
 MY NOTES:
  - Firebase : doitung@xxx / create realtime database
