@@ -7,8 +7,8 @@
 #include <WebServer.h>
 #include <time.h>
 
-String webhook = "http://192.168.1.26:9999/";  // local proxy server for linebot
-//String webhook = "http://10.40.251.31:9999/"; // local proxy server for linebot
+//String webhook = "http://192.168.1.26:9999/";  // local proxy server for linebot
+String webhook = "http://10.40.251.31:9999/"; // local proxy server for linebot
 const char *ssidap = "MAXBoard";                // SSID AP mode
 const char *passwordap = "";                    // no password
   
@@ -32,7 +32,7 @@ unsigned long previousMillis = 0;
 unsigned long previousMillis_clock = 0;        
 const long interval = 1000;       // the interval for webhook
 const long interval_clock = 1000; // the interval for clock
-const char* ntpServer = "pool.ntp.org";
+const char* ntpServer = "ntp.egat.co.th";
 const long  gmtOffset_sec = 25200;
 const int   daylightOffset_sec = 0;
 WebServer server(80);
@@ -102,11 +102,27 @@ void  showLED(void *pvParameters){
         strftime(timeStringBuff, sizeof(timeStringBuff), "%H:%M:%S", &timeinfo);//print like "const char*"
         String clockStr =  String(timeStringBuff);
         Serial.print("led->");Serial.println(clockStr);
-        printLedText(t);
+        printLedText(" "+clockStr);
     }
     else {
       Serial.print("led->");Serial.println(t);    
-      printLedScroll(t);
+      if (t.substring(0,1) == ">"){ // pacman
+        printLedScroll((String)char(219)+t.substring(1,t.length()));
+      }
+      else if (t.substring(0,1) == "#") { // set speed
+        TD_led_delay = t.substring(1,t.length()).toInt();
+        Serial.print("set speed = ");Serial.println(TD_led_delay);
+        printLedScroll("Set delay "+t.substring(1,t.length())+" msec");
+      }
+      else if (t == "clr") {  // clear
+        printLedText(" ");
+      }
+      else if (t.substring(0,1) == "!") {  // still text @ todo center
+        printLedText(t.substring(1,t.length()));
+      }
+      else {
+        printLedScroll(t);
+      }
     }
     vTaskDelay(1000 / portTICK_PERIOD_MS); 
   }
