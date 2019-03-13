@@ -3,7 +3,6 @@ const line = require('@line/bot-sdk');
 const firebase = require("firebase");
 
 firebase.initializeApp({
-    //"serviceAccount": "./maxboard.json",
     "databaseURL": "https://maxboard-egat.firebaseio.com"
 });
 
