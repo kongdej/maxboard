@@ -1,12 +1,15 @@
 const express = require('express');
 const line = require('@line/bot-sdk');
-const firebase = require("firebase");
+var admin = require("firebase-admin");
 
-firebase.initializeApp({
-    "databaseURL": "https://maxboard-egat.firebaseio.com"
+var serviceAccount = require("./serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://maxboard-egat.firebaseio.com"
 });
 
-const ref = firebase.app().database()
+const ref = admin.app().database()
 const usersRef = ref.ref('/users')
 const boardRef = ref.ref('/board')
 
