@@ -1,12 +1,22 @@
 # maxboard
-Documentation
+kongdejs@gmail.com
+13 Mar 2019
 
-1. Local Server
-      - firebase.js  : connect firebase and create /board/<boardId>.html
-      - server.js    : local web server ./board/<boardId>.html for Led maxtrix
+User Manual
 
-2. LINEBOT
-      - ./linebot/index.js : webhook for line bot, put message to firebase realtime database
+1. LocalServer (Raspbery Pi)
+      : listen firebase-database modified, then create ./boards/<boardId>.html and write LINE message
+      : local web server http://<ip>:9999/<boardId>.html
+
+      - node index.js 
+
+2. LINEBOT (Heroku)
+      : webhook for line bot, put message to firebase-database
+      
+      - create ./linebot/serviceAccountKey.json 
+      - copy to ./linebot
+      - deploy to heroku 
+      - update webhook url 
 
 3. ESP32 CODE
       #define MAX_DEVICES 16
@@ -15,7 +25,7 @@ Documentation
       #define CS_PIN    27  
       resetIn = 2
 
-SERVERS
+MY NOTES:
  - Firebase : doitung@xxx / create realtime database
  - LineDev  : kongdej@xxxx / create provider and bot
  - Heroku   : kongdej@xxxx / create app (maxboard.herokuapp.com) then push ./linebot
