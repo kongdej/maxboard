@@ -9,7 +9,7 @@ User Manual
       - create ./linebot/serviceAccountKey.json 
       - copy to ./linebot
       - deploy to heroku 
-      - update webhook url 
+      - update LINE Webhook URL 
 
 2. LocalServer: Listen firebase-database, then create ./boards/boardId.html with LINE message and response requested from LEDMATRIX (http://localhost:9999/boardId.html)
 
