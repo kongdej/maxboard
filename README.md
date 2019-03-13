@@ -1,13 +1,12 @@
 # maxboard
 Installation
 
-1. Intranet service
-      - ./index.js  : connect firebase and create /board/<boardId>.html
-      - ./server.js : local server ./board/<boardId>.html for Led maxtrix
+1. Local Server
+      - firebase.js  : connect firebase and create /board/<boardId>.html
+      - server.js    : local web server ./board/<boardId>.html for Led maxtrix
 
 2. LINEBOT
       - ./linebot/index.js : webhook for line bot, put message to firebase realtime database
-
 
 3. ESP32 CODE
       #define MAX_DEVICES 16
