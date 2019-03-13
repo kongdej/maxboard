@@ -17,7 +17,7 @@ User Manual
       
 3. ESP32 CODE
 
-      - modify localhost url
+      String webhook = "http://server_ip:9999/";
 
 
 MY NOTES:
