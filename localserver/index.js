@@ -6,8 +6,7 @@ const app = express();
 const port = 9999;
 
 firebase.initializeApp({
-    "serviceAccount": "./maxboard.json",
-    "databaseURL": "https://maxboard-egat.firebaseio.com"
+    "databaseURL": "https://xxxxxxxx.firebaseio.com"
 });
 
 const ref = firebase.app().database().ref('/board');

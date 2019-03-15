@@ -750,9 +750,10 @@ void accessPoint(void *pvParameters) {
       server.on("/list", handleList);
       server.begin();
       Serial.println("HTTP server started");
+      String msg  = "SSID="+ssidap+"--> 192.168.4.1";
       while(1) {
-       printLedScroll("SSID=MAXBoard , 192.168.4.1");
-       vTaskDelay(1000 / portTICK_PERIOD_MS); 
+        printLedScroll(msg);
+        vTaskDelay(1000 / portTICK_PERIOD_MS); 
      }
 }
 
@@ -800,7 +801,7 @@ void handleList() {
   content += "Board Name = "+String(boardId)+"<br>";
   content += "SSID = "+String(ssid)+"<br>";
   content += "Username = "+String(username)+"<br>";
-  content += "Password = "+String(password)+"<br>";
+  content += "Password = xxxxxxxxxxx<br>";
       
   server.send(200, "text/html", content);  
 }
