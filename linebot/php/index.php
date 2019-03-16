@@ -3,8 +3,7 @@
  error_reporting(0);
  
 // Line access toke
-$access_token = "84ah/gtpG/bWLWtDU3COD+6YDnfEy7of4Zy/7QuFCrY/fNyEfYPprP4lsOMK0hXULqsXcqXztXcMDsfFEwrx5jX3KelVvz1iwFvj+CXzMtiGlVUmbYaP+PuAJyva2KpDdM9ZoNXgom7x0PyMB6p8YQdB04t89/1O/w1cDnyilFU=
-Issue";
+$access_token = "xxxxxxxxxxxxxxxxxxxx";
 
 
 $filelist = "./boards.txt";
