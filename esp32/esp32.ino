@@ -7,7 +7,9 @@
 #include <WebServer.h>
 #include <time.h>
 
-String webhook = "http://10.40.251.31:9999/"; // local proxy server for linebot
+String webhook = "http://10.40.251.31:9999/";             // local proxy server for linebot
+//String webhook = "http://maxboard-php.herokuapp.com/";  // heroku server for linebot
+
 const char *ssidap = "MAXBoard";                // SSID AP mode
 const char *passwordap = "";                    // no password
   
